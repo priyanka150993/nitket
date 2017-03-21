@@ -1,4 +1,5 @@
 <?php
+//After Login By User User Will Be Redirects to This Page 
     session_start();
     include('setup.php');
     $conn = new mysqli('localhost','root','amit','nit-ket') or die('Cant Connect To server ....');    
@@ -95,7 +96,7 @@
                <div class="col-md-12 col-sm-12 col-xs-12">
                    <?php
 				   
-						show_pref_form();				//located in setup.php
+			show_pref_form();				//located in setup.php
                       
                         if(isset($_GET['uploaded']))
                         {
