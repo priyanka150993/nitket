@@ -86,7 +86,7 @@
 		}  // search buyer ends here 
 	}
 
-	$a = new item();
+	$a = new item();			//Done By Priyanka 
 	if(isset($_POST['category'])){		//Call DisplayName Function When User Selects An Option from Drop Down List
 		$item = $_POST['category'];		
 	    $a->displayName($item);
