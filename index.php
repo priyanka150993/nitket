@@ -1,8 +1,9 @@
 <?php
-    include_once("user/config.php");
+//Google Authentication Done By Amit Kumar Soni
+    include_once("user/config.php");					//Including Configuration For Google API KEY and Secrets
     include_once("user/includes/functions.php");
- 	include("connect.php");
-    if(isset($_REQUEST['code'])){
+    include("connect.php");						//Connection File to Server 
+    if(isset($_REQUEST['code'])){					//Getting ID Code from Google Server 
       $gClient->authenticate();
       $_SESSION['token'] = $gClient->getAccessToken();
       header('Location: ' . filter_var($redirectUrl, FILTER_SANITIZE_URL));
@@ -25,8 +26,10 @@
         $_SESSION['token'] = $gClient->getAccessToken();
 
     } else {
-        $authUrl = $gClient->createAuthUrl();
+        $authUrl = $gClient->createAuthUrl();				//Generating Login Link On The page 
     }
+
+//Google Authentication Done By Amit Kumar Soni
 ?>
   <!DOCTYPE html>
   <html xmlns="http://www.w3.org/1999/xhtml">
@@ -220,9 +223,10 @@
                 <div class="container">
                     <h3 align="center">Select Category Here </h3>              
                       
-                      <!-- fetch category dynamically -->
-                      <?php
-                        include('connect.php');
+                      <!-- fetch category dynamically  Done By Amit Kumar Soni -->
+                      
+			<?php
+                        include('connect.php');				//Setup Connection With Server 
                         $sql = "SELECT distinct `itemcategory` FROM `item` WHERE 1";
                         $result = $conn->query($sql);
                         if($result->num_rows>0)
@@ -235,7 +239,9 @@
                         }
                       ?>
 
-                      <!-- fetching category dynamically  ends here-->
+                     <!-- fetch category dynamically  Done By Amit Kumar Soni -->
+			
+			
                     <div id="itemdetails"></div>
                 </div>                 
               </div>
@@ -485,6 +491,8 @@
 <script src="assets/js/custom.js"></script>
 <script src="function.js"></script>
 <script>
+	
+	//Google Map Integration --Done By Amit Soni (My API Key is Used Here for Google Map)---
     function myMap() 
     {
         var mapProp= {
@@ -493,6 +501,8 @@
         };
         var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
     } 
+	
+	//Google Map Integration --Done By Amit Soni---
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1FFOKyytf0w9CjI05bIL8cny0xXRpvco&callback=myMap"></script>
