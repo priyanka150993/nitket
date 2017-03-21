@@ -1,5 +1,6 @@
 <?php
 $conn = new mysqli('localhost','m150034ca','m150034ca','db_m150034ca');
+//fetch item from database
 if($_POST['fetchdata'])
 {
 
