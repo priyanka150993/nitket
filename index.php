@@ -31,6 +31,7 @@
 
 //Google Authentication Done By Amit Kumar Soni
 ?>
+<!--this is home page this is done by Sarvesh singh-->
   <!DOCTYPE html>
   <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -513,7 +514,9 @@
 </body>
 </html>
 <?php
-	 include("connect.php");
+	
+	  //this is feedback this done by Sarvesh Singh
+	  include("connect.php");
 	 if(isset($_POST['sub1']))
 	 {
 	 	$name1=$_POST['name'];
