@@ -224,7 +224,7 @@
                 <div class="container">
                     <h3 align="center">Select Category Here </h3>              
                       
-                      <!-- fetch category dynamically  Done By Amit Kumar Soni -->
+                      <!--php code to search item by category-->
                       
 			<?php
                         include('connect.php');				//Setup Connection With Server 
@@ -240,7 +240,7 @@
                         }
                       ?>
 
-                     <!-- fetch category dynamically  Done By Amit Kumar Soni -->
+                    
 			
 			
                     <div id="itemdetails"></div>
