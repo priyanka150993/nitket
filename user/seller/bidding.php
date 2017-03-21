@@ -65,6 +65,7 @@
             </div>
         </div>
     </section>
+<!-- interface for create bid --> 
     	<div id="header" style="height:500px;">	
     		<form action="bidding.php" method="post">
 				<div class="form-group">
