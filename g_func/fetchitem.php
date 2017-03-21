@@ -1,5 +1,5 @@
 <?php
-	//$conn = new mysqli('localhost','root','amit','nit-ket');
+	//Function Definition for Item Class (Created By : Amit Kumar Soni Date :19-03-2017)
 	
 	class item
 	{				
@@ -23,7 +23,7 @@
 		{	
 			$sql = "SELECT * FROM `item` WHERE `itemcategory`='$item'";
 			$result =mysqli_query($this->connect,$sql);
-			//$result = $conn->query($sql);
+			
 			if($result->num_rows>0)
 			{	
 				while($r = $result->fetch_assoc())
@@ -87,21 +87,17 @@
 	}
 
 	$a = new item();
-	if(isset($_POST['category'])){
+	if(isset($_POST['category'])){		//Call DisplayName Function When User Selects An Option from Drop Down List
 		$item = $_POST['category'];		
 	    $a->displayName($item);
 	}
 
-	if(isset($_POST['searchitem'])){
+	if(isset($_POST['searchitem'])){	//Call DisplayName Function When User Selects An Option from Drop Down List
 		$temp =$_POST['searchitem'];
 		$a->DisplaybyItem($temp);
 	}	
 
-	if(isset($_POST['saveFeedback'])){
-		echo 'hello';
-	}
-
-	if(isset($_POST['searchbybuyer'])){
+	if(isset($_POST['searchbybuyer'])){	//Call search_by_buyer() Function When Page Loads 
 		$a->search_by_buyer();
 	}	
 
