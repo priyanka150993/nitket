@@ -1,6 +1,7 @@
 <?php
     session_start();
     include('../setup.php');   
+	//connection of database
     $conn = new mysqli('localhost','root','','nit-ket') or die('Cant Connect To server ....');
     if(!isset($_SESSION['google_data'])):header("Location:../index.php");endif;  
 ?>
