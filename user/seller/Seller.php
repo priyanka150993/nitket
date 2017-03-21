@@ -101,15 +101,15 @@ public function uploadItem()
 		
 			echo '<table class="table table-responsive">';
 			echo '<tr>
-					<th>Item Id</th>
-					<th>Item Name </th>
-					<th>Picture</th>
-					<th>Descriptin</th>
-					<th>Price</th>
-					<th>Category</th>
-					<th>Status</th>	
-                    <th>create Bid</th>					
-				 </tr>';	
+				<th>Item Id</th>
+				<th>Item Name </th>
+				<th>Picture</th>
+				<th>Descriptin</th>
+				<th>Price</th>
+				<th>Category</th>
+				<th>Status</th>	
+				<th>create Bid</th>					
+		              </tr>';	
 			while($r =$result->fetch_assoc())
 			{
 				echo '<tr>
