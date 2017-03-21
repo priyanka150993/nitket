@@ -8,6 +8,7 @@
     if(!isset($_SESSION['google_data'])):header("Location:index.php");endif;    
 ?>
 <!DOCTYPE html>
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
