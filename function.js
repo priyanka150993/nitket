@@ -1,3 +1,5 @@
+//Search Items when User selects some item form dropDown menu 
+
 $('#cat_drop').change(function(){
 	var s ='category='+$("#cat_drop option:selected" ).text();
 	$.ajax({
@@ -17,7 +19,7 @@ $('#cat_drop').change(function(){
 	});
 });
 
-
+//As soon as user entres any item name  This ajax call will be fired and result will shown on the same page  
 $('#search_item').keyup(function(){
       var ss ='searchitem='+$("#search_item" ).val();
       $.ajax({
@@ -37,7 +39,7 @@ $('#search_item').keyup(function(){
   });
 });
 
-
+//When Ajax call is fired Loader will Be Displayed On The same Page 
 $(document).ajaxStart(function(){
 	$('#load').fadeOut();
 });
