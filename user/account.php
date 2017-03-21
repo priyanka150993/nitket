@@ -1,17 +1,19 @@
 <?php
+//Account.php Done By Amit Kumar Soni  Date : 19-03-2017
 //After Login By User User Will Be Redirects to This Page 
     session_start();
-    include('setup.php');
+    include('setup.php');   						//Including Set File Here Which id having all User related Functions
     $conn = new mysqli('localhost','root','amit','nit-ket') or die('Cant Connect To server ....');    
     if(!isset($_SESSION['google_data'])):header("Location:index.php");endif;
 
-    if(isset($_POST['usertype']))
-    {
-        
+    if(isset($_POST['usertype']))   //Catching Users Preference Here  
+	{
 		$a = $_POST['usertype'];		
 		check_pref($a,$_SESSION['google_data']['id'],$_SESSION['google_data']['email'],$conn);
         
     }
+//After Login By User User Will Be Redirects to This Page 
+
 ?>
 <!DOCTYPE html>
 <head>
@@ -64,11 +66,13 @@
 
                     <!--google details -->
                     <div id="details">
-                    <?php	
+                    <?php
+					//Showing Users Information in This Sections 	
+						
                     echo '<li><b>Name </b>:'.$_SESSION['google_data']['given_name'].'</li>';    
 				    echo '<li><b>Google ID : </b>' . $_SESSION['google_data']['id'].'</li>';
 				    echo '<li><b>Full Name </b>:'. $_SESSION['google_data']['name'].'</li>';
-				    echo '<b>Email : </b>' . $_SESSION['google_data']['email'];
+				    echo '<li><b>Email : </b>' . $_SESSION['google_data']['email']. '</li>';
 				    echo '<li><b>Gender </b>:' . $_SESSION['google_data']['gender'].'</li>';
 				    echo '<li><b>Language</b> :' . $_SESSION['google_data']['locale'].'</li>';
 				   
@@ -96,9 +100,10 @@
                <div class="col-md-12 col-sm-12 col-xs-12">
                    <?php
 				   
-			show_pref_form();				//located in setup.php
+				   		//When Page Loads Preference Form Will Shown First To Choose User's Preference 	
+						show_pref_form();				//located in setup.php
                       
-                        if(isset($_GET['uploaded']))
+                        if(isset($_GET['uploaded']))     //Show alert when user Uploads an Item in Database 
                         {
                           echo '<div class="alert alert-danger animated bounceOutLeft">Item Uploaded Sucessfully</div>';    
                         }
@@ -113,7 +118,11 @@
     <script src="assets/js/jquery.metisMenu.js"></script> 
     <script src="assets/js/custom.js"></script>
     <script>
+		
+		//JQuery Function To Show Hide Details Of User 
 		$('#details').hide();
+		
+		//JQuery Function  To Toggle GOOGLE Details Of User  
 		$('#show_details').click(function(e){
 			e.preventDefault();
 			$('#details').toggle("slow");	
