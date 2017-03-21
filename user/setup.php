@@ -1,36 +1,38 @@
 <?php	
-	
+	//Done By Amit 
+	//Preference Form Displys while Page Loads fir the Futsrt Time 
 	function show_pref_form()
-    {
-        echo '<h3 align="center">Login As:-</h3>
-                <div class="col col-md-4 col-md-offset-4" style="border:2px solid green;">
-                    <form id="preference_form" method="POST">
-                      
-                      <div class="form-group">
-                        <label for="email" class="text-center">Buyer</label>
-                        <input type="radio" class="form-control" name="usertype" value="B">
-                      </div>
+	    {
+		echo '<h3 align="center">Login As:-</h3>
+			<div class="col col-md-4 col-md-offset-4" style="border:2px solid green;">
+			    <form id="preference_form" method="POST">
 
-                      <div class="form-group" class="text-center">
-                        <label for="pwd">Seller</label>
-                        <input type="radio" class="form-control" name="usertype" value="S">
-                      </div>
+			      <div class="form-group">
+				<label for="email" class="text-center">Buyer</label>
+				<input type="radio" class="form-control" name="usertype" value="B">
+			      </div>
 
-                      <div class="form-group" class="text-center">
+			      <div class="form-group" class="text-center">
+				<label for="pwd">Seller</label>
+				<input type="radio" class="form-control" name="usertype" value="S">
+			      </div>
 
-                        <button type="submit" class="center btn btn-danger">Save Preference</button>
-                      </div>                   
-              
-                  </form>
-                </div>';
-    }
+			      <div class="form-group" class="text-center">
+
+				<button type="submit" class="center btn btn-danger">Save Preference</button>
+			      </div>                   
+
+			  </form>
+			</div>';
+	    }
 
 
-	
+	//Fertch Ip Address Of the Client  
 	function fetch_ip(){
 		return $_SERVER['REMOTE_ADDR'];
 	}
 
+	//Check if Buyer Exist Already 
 	function is_buyer_exist($email,$link)
 	{	
 	
@@ -39,14 +41,14 @@
 
 		if($search_buyer->num_rows>0){
 			return 'yes';
-			//header('Location:buyer/index.php?pref=buyer&loggedin=1');
+			
 		}else{
 
 			//isert as buyer and redirect 
 			return 'no';
 		}
 	}
-
+	//Check if Seller  Exist Already 
 	function is_seller_exist($id,$link)
 	{
 		
@@ -98,6 +100,9 @@
 		}				//Displaying Preference form                               	    //User havn't setup preference                                              	    //Display Preference Form 		
 	}
 
+
+
+ //Setting Up the Preference of the User  
 	function set_preference($type,$id,$mail,$link)
     {    	
     	$ip = fetch_ip();	
