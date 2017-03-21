@@ -153,7 +153,7 @@ class Bid
 		?>
 			<img src="nokia.jpeg" align="middle" style="width:300px;height:220px;">
 			
-		
+		<!--interface of bid -->
 		<tr>
 			<th>ItemId: </th>
 			<th><?php echo $abid->itemId; ?></th>
