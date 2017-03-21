@@ -128,6 +128,7 @@
 
 
                         ?>
+			   <!--HERE INTERFACE FOR UPLOADS ITEM -->
                         <div class="col col-sm-12" id="show_form">
                         	
                         	<div class="panel panel-default">
