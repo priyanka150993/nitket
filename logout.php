@@ -1,4 +1,6 @@
 <?php
+
+//here receiving access token and pass it to config and send logout parameter
 include_once("config.php");
 if(array_key_exists('logout',$_GET))
 {
