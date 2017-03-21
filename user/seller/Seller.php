@@ -24,7 +24,8 @@ class Seller extends User
 		}
 	}
 	
- //FUNCTION TO UPLOAD ITEM BY SELLER	
+ //FUNCTION TO UPLOAD ITEM BY SELLER 	
+//upload function done by Priyanka Ekka and Sarvesh Singh	
 public function uploadItem()     
 	{				
 		if(isset($_POST['sub']))
@@ -34,7 +35,7 @@ public function uploadItem()
 			$itemprice=$_POST['item_price'];
 			$itemdescp=$_POST['item_descp'];
 			$itemstatus=$_POST['item_status'];
-			$target_dir = "image/";
+			$target_dir = "image/"; //image stores in this directory
 			$target_file = $target_dir.basename($_FILES["Upload"]["name"]);
 			$uploadOk = 1;
 			$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -89,6 +90,7 @@ public function uploadItem()
 	}
 
 //FUNCTION TO VIEW ITEMS UPLOADED BY SELLER
+	//function done by Sarvesh Singh and Priyanka Ekka
 	public function viewItem($email)
 	{        
 		echo 'result for email --'.$email;
@@ -109,7 +111,7 @@ public function uploadItem()
 					<th>Status</th>	
                     <th>create Bid</th>					
 				 </tr>';	
-			while($r =$result->fetch_assoc())
+			while($r =$result->fetch_assoc())// fetch results from database
 			{
 				echo '<tr>
 				<td>'.$r['itemid'].'</td>
@@ -131,7 +133,7 @@ public function uploadItem()
 
 $obj=new Seller();    //OBJECT CREATED OF CLASS SELLER
 $obj->uploadItem();	
-
+//calls viewItem function
 if(isset($_POST['show_uploaded_by_me'])){
 	$obj->viewItem($_SESSION['google_data']['email']);				
 }
